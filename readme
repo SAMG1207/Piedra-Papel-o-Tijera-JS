@@ -1,0 +1,60 @@
+Esta actividad consiste en la realización de una aplicación web con las siguientes características:
+3.1 Descripción
+Se quiere desarrollar una aplicación web que permita a sus usuarios jugar a Piedra, Papel o Tijera contra la máquina,
+eligiendo entre las diferentes opciones y permitiendo llevar un historial de los últimos resultados.
+3.2 Tecnologías
+Solo se podrá utiliza JavaScript.
+ Se adjunta todos los ficheros necesarios para la realización de esta actividad. No se podrán utilizar otros ficheros y no se podrán modificar los ficheros HTML y CSS que se entregan.
+3.3 Objetivos
+Objetivo principal: Desarrollar un sistema que permita jugar contra la máquina al Piedra, Papel o Tijera.
+Objetivos específicos:
+• Desarrollar el sistema de reconocimiento de usuarios y de número de partidas a jugar.
+• Desarrollar un sistema que permita al usuario seleccionar una opción para jugar, generar una opción aleatoria para la máquina y conocer el resultado.
+• Desarrollar el sistema control del historial de los resultados de cada jugada y restablecimiento de las partidas.
+3.4 Requisitos
+La aplicación se divide en cuatro partes con los siguientes requisitos y comportamientos:
+Configuración de la aplicación
+• Asignará al botón ¡JUGAR! el evento que permita realizar las comprobaciones del comienzo de la partida.
+• Asignará a todas las imágenes, salvo a la última, el evento que permita seleccionar la opción del jugador y 
+poner en ellas las imágenes que les corresponden. Estas imágenes se generarán a partir del array “posibilidades” 
+que se suministra en la primera línea del fichero JS y se le añadirá la ruta hasta ellas, el indicador que es de “Jugador” 
+y la extensión del fichero.
+• Asignará al botón ¡YA! el evento que permita realizar la tirada y calcular el resultado de esta.
+• Asignará al botón RESET el evento que permita reestablecer la aplicación.
+Comienzo de partida
+• Se proporcionan dos campos de texto donde el usuario introducirá su nombre y el número de partidas que va a jugar.
+• Un nombre será válido si tiene más de tres caracteres y el primero de ellos no es un número.
+• Una cantidad de partidas será válida si es mayor que 0.
+• Al pulsar el botón ¡JUGAR!, realizará las comprobaciones de si son válidos el nombre y el número de partidas, 
+e indicará qué campos son incorrectos utilizando la clase “fondoRojo”.
+• Si ambos campos son válidos, eliminará la clase “fondoRojo” 
+(en caso de que se hubieran introducido previamente datos incorrectos),
+ desactivará ambos campos de texto para que no se puedan introducir nuevos datos y
+volcará el valor introducido en el <span> “total” que indica el número de tiradas totales que se podrán realizar.
+Elección y tirada
+• Permitirá elegir entre una de las posibles opciones que se declaren como <img> dentro del <div> del “jugador”.
+• Al seleccionar una opción le aplicará el estilo de la clase “seleccionado” y al resto “noSeleccionado”.
+• Al pulsar sobre el botón ¡YA! generará una opción aleatoria para el <img> dentro del <div> de la “máquina” y sumará una partida en el <span> “actual” que indica el número de tiradas realizadas hasta el momento.
+• La opción aleatoria la generará a partir del array “posibilidades” que se suministra en la primera línea del fichero y se le añadirá la ruta hasta ella, el indicador que es de “Ordenador” y la extensión del fichero.
+• Comprobará el resultado de la jugada teniendo en cuenta que:
+o Lo que esté en la primera posición del array “posibilidades” gana a lo que esté en la última.
+o Lo que esté en la posición “n” del array gana a lo que está en la posición “n-1” del array. Es decir, lo que esté en la posición 2 gana a lo que está en la posición 1, y así sucesivamente.
+o De esta forma, el código será compatible con cualquier aplicación, siempre que el número de opciones que tenga el jugador corresponda con la longitud que tenga el array.
+Historial de partidas
+• Cuando se realice una tirada, aparecerá en el historial el resultado de la jugada:
+o Si gana el jugador, indicará el nombre del jugador introducido al comienzo de la partida. Por ejemplo “Gana Ramón”.
+o Si gana la máquina, el mensaje “Gana la máquina”.
+o En caso de empate, el mensaje “Empate”.
+• Cuando se pulse el botón RESET, mostrará el mensaje “Nueva partida” y realizará los siguientes cambios en la aplicación:
+o Volverá a activar los campos de texto del comienzo de partida, dejando a “0” las partidas introducidas
+y manteniendo el nombre del jugador.
+o Volverá a poner a 0 los contadores de partidas “actual” y “total”.
+o Pondrá la imagen por defecto en la opción de la máquina.
+o Mantendrá el historial de resultados hasta el momento.
+3.5 Pruebas
+Deberá realizarse un documento de pruebas en el que se incluya capturas de la aplicación de cada paso y los comentarios sobre el código que se consideren necesarios para cumplir los requisitos de este enunciado, en el uso de la aplicación en los siguientes casos de uso:
+1. Introducción de usuario con datos no válidos.
+2. Introducción de cantidad de partidas con datos no válidos.
+3. Acceso a la aplicación con datos válidos.
+4. Seleccionar una de las opciones y jugar al menos 5 partidas.
+5. Pulsar el botón RESET y jugar al menos 3 partidas.
